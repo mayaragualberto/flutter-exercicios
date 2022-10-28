@@ -27,23 +27,23 @@ class _MenuDrawerState extends State<MenuDrawer> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.pink,
-        // leading: IconButton(
-        //   icon: const Icon(Icons.menu),
-        //   onPressed: () => {},
-        // ),
         iconTheme: const IconThemeData(color: Color(0xfffce4ec)),
         title: const Text(
           'Menu Drawer',
           style: TextStyle(color: Color(0xfffce4ec)),
         ),
+        actions: [
+          Builder(
+            builder: (context) => IconButton(
+              icon: const Icon(Icons.menu, size: 30),
+              onPressed: () => Scaffold.of(context).openEndDrawer(),
+            ),
+          ),
+        ],
       ),
       endDrawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
         backgroundColor: const Color(0xfffce4ec),
         child: ListView(
-          // Important: Remove any padding from the ListView.
           padding: const EdgeInsets.only(top: 50),
           children: [
             ListTile(
