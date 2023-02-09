@@ -31,10 +31,11 @@ class _CoinState extends State<Coin> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Column(
         children: [
           const SizedBox(
-            height: 150.0,
+            height: 50.0,
             width: 50.0,
           ),
           Container(
